@@ -1,5 +1,5 @@
 title: Sora Is Bleeding
-description: If Sora is in a battle, you will slowly start losing HP. If his HP reaches 0, you will start to lose MP. If Sora's MP and HP are 0, you will begin losing drive.
+description: If Sora is in a battle, you will slowly start to lose HP. If his HP reaches 0, you will start to lose MP. If Sora's MP and HP are 0, you will start to lose drive.
 assets:
 #Lua Scripts
 - name: scripts/Bleeding.lua
