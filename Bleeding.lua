@@ -36,9 +36,12 @@ end
 
 function Cheats()
 Timer = Timer - 1
-	if ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) > 0 then
+	if ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) > 0 and ReadByte(Slot1+0x0) < 40 then
 		WriteByte(Slot1+0x0, ReadByte(Slot1+0x0) - 1)
 		Timer = 120
+	elseif ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) > 0 and ReadByte(Slot1+0x0) >= 40 then
+		WriteByte(Slot1+0x0, ReadByte(Slot1+0x0) - 1)
+		Timer = 60
 	elseif ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) == 0 and ReadByte(Slot1+0x180) > 0 then
 		WriteByte(Slot1+0x180, ReadByte(Slot1+0x180) - 1)
 		Timer = 30
