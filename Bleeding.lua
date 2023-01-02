@@ -1,4 +1,5 @@
 Timer = 60
+Regen = 30
 function _OnFrame()
     World = ReadByte(Now + 0x00)
     Room = ReadByte(Now + 0x01)
@@ -37,6 +38,8 @@ end
 function Cheats()
 	if ReadShort(0x6877DA) == 0 and ReadByte(0x24AA5B6) > 0 then
 		Timer = Timer - 1
+	elseif ReadShort(0x6877DA) == 0 and ReadByte(0x24AA5B6) == 0
+		Regen = Regen - 1
 	end
 	if ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) > 1 and ReadByte(Slot1+0x0) <= 20 then
 		WriteByte(Slot1+0x0, ReadByte(Slot1+0x0) - 1)
@@ -59,5 +62,7 @@ function Cheats()
 	elseif ReadByte(Slot1+0x1B0) == 0 and Timer <= 0 and ReadByte(Slot1+0x1B1) > 0 then
 		WriteByte(Slot1+0x1B1, ReadByte(Slot1+0x1B1) - 1)
 		WriteByte(Slot1+0x1B0, 100)
+	elseif ReadShort(0x6877DA) == 0 and ReadByte(0x24AA5B6) == 0 and ReadByte(Slot1+0x0) < ReadByte(Slot1+0x4) and Regen <= 0 then
+		WriteByte(Slot1+0x0, ReadByte(Slot1+0x0) + 1)
 	end
 end
