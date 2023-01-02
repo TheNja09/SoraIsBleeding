@@ -38,22 +38,22 @@ function Cheats()
 	if ReadShort(0x6877DA) == 0 and ReadByte(0x24AA5B6) > 0 then
 		Timer = Timer - 1
 	end
-	if ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) > 0 and ReadByte(Slot1+0x0) <= 20 then
+	if ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) > 1 and ReadByte(Slot1+0x0) <= 20 then
 		WriteByte(Slot1+0x0, ReadByte(Slot1+0x0) - 1)
 		Timer = 120
-	elseif ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) > 0 and ReadByte(Slot1+0x0) <= 40 then
+	elseif ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) > 1 and ReadByte(Slot1+0x0) <= 40 then
 		WriteByte(Slot1+0x0, ReadByte(Slot1+0x0) - 1)
 		Timer = 90
-	elseif ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) > 0 and ReadByte(Slot1+0x0) <= 60 then
+	elseif ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) > 1 and ReadByte(Slot1+0x0) <= 60 then
 		WriteByte(Slot1+0x0, ReadByte(Slot1+0x0) - 1)
 		Timer = 60
-	elseif ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) > 0 and ReadByte(Slot1+0x0) > 60 then
+	elseif ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) > 1 and ReadByte(Slot1+0x0) > 60 then
 		WriteByte(Slot1+0x0, ReadByte(Slot1+0x0) - 1)
 		Timer = 30
-	elseif ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) == 0 and ReadByte(Slot1+0x180) > 0 then
+	elseif ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) == 1 and ReadByte(Slot1+0x180) > 0 then
 		WriteByte(Slot1+0x180, ReadByte(Slot1+0x180) - 1)
 		Timer = 20
-	elseif ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) == 0 and ReadByte(Slot1+0x180) == 0 and ReadByte(Slot1+0x1B0) > 0 then
+	elseif ReadByte(0x24AA5B6) > 0 and ReadShort(0x6877DA) == 0 and Timer <= 0 and ReadByte(Slot1+0x0) == 1 and ReadByte(Slot1+0x180) == 0 and ReadByte(Slot1+0x1B0) > 0 then
 		WriteByte(Slot1+0x1B0, ReadByte(Slot1+0x1B0) - 1)
 		Timer = 5
 	elseif ReadByte(Slot1+0x1B0) == 0 and Timer <= 0 and ReadByte(Slot1+0x1B1) > 0 then
